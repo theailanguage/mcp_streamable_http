@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "server1": {
+      "type": "http",
+      "url": "http://localhost:3000/mcp/"
+    },
+    "server2": {
+      "type": "http",
+      "url": "http://localhost:3001/mcp/"
+    },
+    "terminal": {
+      "type": "stdio",
+        "command": "/Users/theailanguage/.local/bin/uv",
+        "args": [
+            "--directory", "/Users/theailanguage/mcp/mcp_streamable_http/stdio_server/1-terminal-server",
+            "run", 
+            "terminal_server.py"
+        ]
+      }
+  }
+}
