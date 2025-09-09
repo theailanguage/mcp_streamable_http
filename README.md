@@ -1,6 +1,6 @@
 # MCP Streamable HTTP Servers & Client
 
-This project demonstrates how to build and interact with **Model Context Protocol (MCP)** streamable HTTP servers and clients in Python. It includes stateless servers, and a Gemini-powered ADK client capable of interacting with MCP toolsets.
+This project demonstrates how to build and interact with **Model Context Protocol (MCP)** streamable HTTP servers and clients in Python. It includes stateless servers, a Google OAuth–protected server, and a Gemini-powered ADK client capable of interacting with MCP toolsets.
 
 ---
 
@@ -52,7 +52,18 @@ These are **stateless**, **streamable** HTTP servers built using the Model Conte
 
 ---
 
-## 2️⃣ MCP Streamable HTTP Client
+## 2️⃣ Google OAuth–Protected Server
+
+**Location:** `streamable_http_server/2-google-oauth-simple-server/`
+
+This server demonstrates the **OAuth Proxy pattern** with **Google as the upstream provider**. It protects an MCP server behind Google OAuth 2.0, allowing MCP clients to authenticate dynamically using **DCR (Dynamic Client Registration)**, **PKCE**, and **loopback redirect URIs**.
+
+* `server.py`: MCP Resource Server acting as an OAuth Proxy to Google.
+* `README.md`: Detailed explanation of setup, environment variables, and flow.
+
+---
+
+## 3️⃣ MCP Streamable HTTP Client
 
 **Location:** `streamable_http_client/`
 
@@ -124,7 +135,26 @@ This is an educational project that demonstrates how to connect to a **Model Con
 
 ---
 
-## 3️⃣ Coming Soon
+## 4️⃣ Google OAuth–Protected Client
+
+**Location:** `universal_client/3-google-oauth-simple-client/`
+
+This client demonstrates how to authenticate against the **Google OAuth–protected MCP server** using the OAuth Proxy pattern. It:
+
+* Handles loopback redirect URIs.
+* Supports DCR + PKCE automatically.
+* Interacts with the protected tools (`get_time`, `get_user_info`).
+
+Run with:
+
+```bash
+source .venv/bin/activate
+uv run ./universal_client/3-google-oauth-simple-client/client.py
+```
+
+---
+
+## 5️⃣ Coming Soon
 
 ### 🧠 Stateful Streamable Server
 
@@ -157,8 +187,8 @@ If you want to integrate these MCP servers with Claude Desktop, use the followin
 }
 ```
 
-Save this as `claude_desktop_config.json`. 
-**Warning! - This uses a third party package called `mcp-remote` that is not an official antrhopic or claude package**
+Save this as `claude_desktop_config.json`.
+**Warning! - This uses a third party package called `mcp-remote` that is not an official Anthropic or Claude package**
 
 ---
 

@@ -1,20 +1,26 @@
 [project]
-name = "mcp-stremable-http"
+name = "mcp-streamable-http"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.11"
 dependencies = [
-    "click>=8.2.1",
+    "fastmcp>=2.11.3",
+        "click>=8.2.1",
     "google-adk>=1.5.0",
     "langchain>=0.3.26",
     "langchain-google-genai>=2.1.6",
     "langchain-mcp-adapters>=0.1.8",
     "langgraph>=0.5.1",
-    "mcp>=1.10.1",
     "python-dotenv>=1.1.1",
     "starlette>=0.46.2",
     "uvicorn>=0.35.0",
     "fastapi>=0.115.14",
     "rich>=14.0.0",
+    "pyjwt>=2.10.1",
+    "authlib>=1.6.1",
+    "mcp>=1.13.1",
 ]
+
+[tool.uv.sources]
+fastmcp = { git = "https://github.com/jlowin/fastmcp" }
