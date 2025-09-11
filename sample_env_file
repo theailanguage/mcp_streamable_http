@@ -1,0 +1,28 @@
+GOOGLE_API_KEY=your-google-api-key
+
+# ------------------------------------------------------------------
+# MCP Resource Server with Google OAuth
+# ------------------------------------------------------------------
+
+# Base URL of your MCP Resource Server (must be reachable by clients)
+RS_BASE_URL=http://localhost:8005
+
+# Where to bind the local server
+RS_HOST=0.0.0.0
+RS_PORT=8005
+
+# Path where MCP endpoint is mounted
+MCP_PATH=/mcp
+
+# Google OAuth client credentials (from Google Cloud Console)
+GOOGLE_CLIENT_ID=295xxx-yyy.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=GOCSPX-MqKAzzz
+
+# Redirect path you registered in Google Cloud OAuth credentials
+GOOGLE_REDIRECT_PATH=/auth/callback
+
+# Required OAuth scopes (space-separated list)
+REQUIRED_SCOPES=openid https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile
+
+# Allowed client redirect URIs for DCR (semicolon-separated list)
+ALLOWED_CLIENT_REDIRECT_URIS=http://localhost:*;http://127.0.0.1:*
